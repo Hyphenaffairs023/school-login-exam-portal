@@ -1,0 +1,506 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  min-height: 100vh;
+  color: #222;
+  font-family: "Segoe UI", "Lucida Sans", Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  border-bottom: 4px solid #ff9800;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+header h1 {
+  text-align: center;
+  padding: 0.5rem 0;
+  color: #ff9800;
+  font-family: "Georgia", serif;
+  text-shadow: 1px 2px 10px #fff, 2px 2px 8px #ff9800;
+  font-size: 2.8rem;
+  letter-spacing: 0.18em;
+  margin-top: 0.5rem;
+}
+
+header h3 {
+  color: #388e3c;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+header nav li {
+  list-style: none;
+  display: inline-flex;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: 20px;
+  background: #fff;
+  color: #ff9800;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.07);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+header nav li:hover,
+header nav li:focus-within {
+  background: #ff9800;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.15);
+}
+
+form {
+  margin: 2.5rem auto;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  min-width: 220px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form_login input {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 2px solid #b39ddb;
+  width: 100%;
+  font-size: 1.08rem;
+  border-radius: 7px;
+  background: #f8f8ff;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(179, 157, 219, 0.07);
+}
+
+.form_login input:focus {
+  border-color: #ff9800;
+  outline: none;
+  box-shadow: 0 0 0 2px #ff980033;
+}
+
+.form_login label {
+  padding: 0.4rem 0.2rem;
+  color: #6d4c41;
+  background: #fffde7;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Add this CSS to target the logout button and make it compact */
+
+button {
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff9800 60%, #f44336 100%);
+  border: none;
+  border-radius: 6px;
+  margin: 1rem 0 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.09);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  justify-self: end;
+  display: flex;
+}
+
+button:hover,
+button:focus {
+  background: linear-gradient(90deg, #f44336 60%, #ff9800 100%);
+  color: #fff;
+  outline: none;
+  box-shadow: 0 4px 16px rgba(244, 67, 54, 0.18);
+}
+
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2.1rem;
+    margin-top: 0.4rem;
+    letter-spacing: 0.13em;
+  }
+  form {
+    max-width: 95vw;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+    letter-spacing: 0.08em;
+  }
+  header h3 {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+  form {
+    padding: 1rem 0.5rem;
+    max-width: 99vw;
+    min-width: 0;
+  }
+  .form_login input,
+  button {
+    font-size: 0.98rem;
+    padding: 0.7rem;
+  }
+  header nav li {
+    font-size: 0.97rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  form {
+    padding: 0.5rem 0.2rem;
+  }
+  header h1 {
+    font-size: 1rem;
+  }
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Dashboard Profile Section */
+.dashboard-profile {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 6px 28px rgba(44, 62, 80, 0.10);
+  padding: 2.5rem 2rem;
+  max-width: 700px;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 2px solid #e0c3fc;
+  padding-bottom: 1.5rem;
+}
+
+.profile-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ff9800;
+  box-shadow: 0 2px 12px rgba(255,152,0,0.09);
+  background: #f8f8ff;
+}
+
+.profile-details h2 {
+  font-size: 2rem;
+  color: #388e3c;
+  margin-bottom: 0.5rem;
+  font-family: "Georgia", serif;
+  letter-spacing: 0.04em;
+}
+
+.profile-details p {
+  font-size: 1.08rem;
+  color: #444;
+  margin: 0.15rem 0;
+}
+
+.exam-archives h3 {
+  color: #6d4c41;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.archives-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f8f8ff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 6px rgba(179,157,219,0.07);
+}
+
+.archives-table th,
+.archives-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+.archives-table th {
+  background: #e0c3fc;
+  color: #6d4c41;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-bottom: 2px solid #b39ddb;
+}
+
+.archives-table tr:nth-child(even) {
+  background: #f3e5f5;
+}
+
+.archives-table tr:nth-child(odd) {
+  background: #fff;
+}
+
+.archives-table td {
+  color: #333;
+  font-size: 1rem;
+}
+
+.archives-table td:last-child {
+  font-weight: 600;
+  color: #388e3c;
+}
+
+.archives-table td:last-child:contains('Failed') {
+  color: #f44336;
+}
+
+.archive-link {
+  text-align: right;
+}
+
+.archive-link a {
+  color: #ff9800;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 1.1rem;
+  border-radius: 5px;
+  background: #fffde7;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(255,152,0,0.07);
+}
+
+.archive-link a:hover,
+.archive-link a:focus {
+  background: #ff9800;
+  color: #fff;
+  outline: none;
+}
+
+/* Quiz Container Styles */
+.quiz-container {
+  background: rgba(255,255,255,0.98);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+  max-width: 540px;
+  margin: 2.5rem auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quiz-container h1 {
+  text-align: center;
+  color: #ff9800;
+  font-family: "Georgia", serif;
+  font-size: 2.1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.12em;
+  text-shadow: 1px 2px 10px #fff, 2px 2px 8px #ff9800;
+}
+
+.quiz-header h2 {
+  color: #388e3c;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.quiz-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.quiz-header li {
+  display: flex;
+  align-items: center;
+  background: #f8f8ff;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 1px 4px rgba(179,157,219,0.07);
+  transition: background 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  position: relative;
+}
+
+.quiz-header li:hover,
+.quiz-header li:has(input:focus) {
+  background: #e0c3fc;
+  box-shadow: 0 2px 8px rgba(179,157,219,0.13);
+}
+
+.quiz-header input[type="radio"],
+.quiz-header input[type="checkbox"] {
+  accent-color: #ff9800;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 1.1em;
+  cursor: pointer;
+  transition: box-shadow 0.18s;
+}
+
+.quiz-header label {
+  font-size: 1.08rem;
+  color: #444;
+  cursor: pointer;
+  user-select: none;
+  flex: 1;
+  transition: color 0.18s;
+}
+
+.quiz-header input[type="radio"]:checked + label,
+.quiz-header input[type="checkbox"]:checked + label {
+  color: #ff9800;
+  font-weight: 600;
+}
+
+button#submit,
+button#restart {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff9800 60%, #388e3c 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56,142,60,0.09);
+  transition: background 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+button#submit:hover,
+button#submit:focus,
+button#restart:hover,
+button#restart:focus {
+  background: linear-gradient(90deg, #388e3c 60%, #ff9800 100%);
+  box-shadow: 0 4px 16px rgba(56,142,60,0.18);
+  outline: none;
+}
+
+.result {
+  display: none;
+  margin-top: 2rem;
+  background: #fffde7;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(255,152,0,0.07);
+}
+
+.result h2 {
+  color: #388e3c;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.result #score {
+  color: #ff9800;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .quiz-container {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .quiz-container h1 {
+    font-size: 1.3rem;
+  }
+  .quiz-header h2 {
+    font-size: 1.05rem;
+  }
+  .quiz-header label {
+    font-size: 0.97rem;
+  }
+  button#submit,
+  button#restart {
+    font-size: 0.98rem;
+    padding: 0.7rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .quiz-container {
+    padding: 0.5rem 0.1rem;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .dashboard-profile {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+  .profile-details h2 {
+    font-size: 1.3rem;
+  }
+  .archives-table th,
+  .archives-table td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.97rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .dashboard-profile {
+    padding: 0.5rem 0.1rem;
+  }
+  .profile-img {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+button{
+  align-self: center;
+}
